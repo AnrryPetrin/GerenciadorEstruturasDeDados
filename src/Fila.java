@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Fila {
     int tamanho;
     int inicio;
@@ -50,6 +52,6 @@ public class Fila {
     }
     public void exibeFila(){
         for (int i = 0; i < total; i++)
-            System.out.println("posicao " + i + " valor " + vetor[i]);
+            JOptionPane.showMessageDialog(null, "posicao " + i + " valor " + vetor[i]);
     }
 }

@@ -112,7 +112,7 @@ public class ListaEncadeada {
         int i = 0;
         while (temp_no != null)
         {
-            System.out.println("Saida - Valor" + temp_no.valor + " posição " + i);
+            JOptionPane.showMessageDialog(null, "Saida - Valor" + temp_no.valor + " posição " + i);
             temp_no = temp_no.prox;
             i++;
         }

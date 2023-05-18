@@ -47,13 +47,13 @@ public class Pilha {
         return valorDesempilhado;
     }
 
-    public void ExibePilha() {
-        if (vazia() == true) {
+    public void exibePilha() {
+        if (vazia()) {
             JOptionPane.showMessageDialog(null,
                     "PILHA VAZIA!");
         } else {
             for (int i = topo; i >= 0; i--) {
-                System.out.println("Elemento "
+                JOptionPane.showMessageDialog(null, "Elemento "
                         + vetor[i] + " - posição " + i);
             }
         }
