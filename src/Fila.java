@@ -51,12 +51,16 @@ public class Fila {
         return elem;
     }
     public void exibeFila() {
-        StringBuilder mensagem = new StringBuilder();
-        mensagem.append("VALORES NA FILA\n");
-        for (int i = 0; i < total; i++) {
-            mensagem.append("Posição: ").append(i).append(" Valor: ").append(vetor[i]).append("\n");
+        if (vazia()) {
+            JOptionPane.showMessageDialog(null, "FILA VAZIA!");
+        } else {
+            StringBuilder mensagem = new StringBuilder();
+            mensagem.append("VALORES NA FILA\n");
+            for (int i = 0; i < total; i++) {
+                mensagem.append("Posição: ").append(i).append(" Valor: ").append(vetor[i]).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, mensagem.toString());
         }
-        JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
 }

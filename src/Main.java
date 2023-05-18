@@ -68,7 +68,6 @@ public class Main {
 
     public static void manipularLista(ListaEncadeada lista) {
         int opcao;
-
         do {
             opcao = Integer.parseInt(JOptionPane.showInputDialog("""
                     1 - Inserir elemento na lista
@@ -111,13 +110,14 @@ public class Main {
                 case 2:// remove elementos da lista
                     if (lista.numero_nos == 0) {
                         JOptionPane.showMessageDialog(null, "A lista esta vazia!");
+
                     } else {
                         // Remove o elemento do início da lista
                         IntNoSimples noRemovido = lista.primeiro;
                         lista.excluiNo(noRemovido.valor);
 
                         JOptionPane.showMessageDialog(null, "Elemento removido da lista: " + noRemovido.valor);
-
+                        lista.numero_nos --;
                     }
                     break;
                 case 3: // exibe o primeiro e o ultimo elemento da lista

@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class ListaEncadeada {
     IntNoSimples primeiro, ultimo;
-    int numero_nos=0;
+    int numero_nos = 0;
 
     ListaEncadeada(){
         primeiro = ultimo = null;
@@ -108,16 +108,19 @@ public class ListaEncadeada {
             ultimo = anterior_no;
     }
     void exibeLista() {
-        IntNoSimples temp_no = primeiro;
-        StringBuilder mensagem = new StringBuilder();
-        int i = 0;
-        mensagem.append("VALORES NA LISTA\n");
-        while (temp_no != null) {
-            mensagem.append("Posição: ").append(i).append(" Valor: ").append(temp_no.valor).append("\n");
-            temp_no = temp_no.prox;
-            i++;
+        if (numero_nos == 0) {
+            JOptionPane.showMessageDialog(null, "LISTA VAZIA!");
+        } else {
+            IntNoSimples temp_no = primeiro;
+            StringBuilder mensagem = new StringBuilder();
+            int i = 0;
+            mensagem.append("VALORES NA LISTA\n");
+            while (temp_no != null) {
+                mensagem.append("Posição: ").append(i).append(" Valor: ").append(temp_no.valor).append("\n");
+                temp_no = temp_no.prox;
+                i++;
+            }
+            JOptionPane.showMessageDialog(null, mensagem.toString());
         }
-        JOptionPane.showMessageDialog(null, mensagem.toString());
     }
-
 }
