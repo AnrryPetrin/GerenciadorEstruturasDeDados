@@ -107,14 +107,17 @@ public class ListaEncadeada {
         if (ultimo == temp_no)
             ultimo = anterior_no;
     }
-    void exibeLista(){
+    void exibeLista() {
         IntNoSimples temp_no = primeiro;
+        StringBuilder mensagem = new StringBuilder();
         int i = 0;
-        while (temp_no != null)
-        {
-            JOptionPane.showMessageDialog(null, "Saida - Valor" + temp_no.valor + " posição " + i);
+        mensagem.append("VALORES NA LISTA\n");
+        while (temp_no != null) {
+            mensagem.append("Posição: ").append(i).append(" Valor: ").append(temp_no.valor).append("\n");
             temp_no = temp_no.prox;
             i++;
         }
+        JOptionPane.showMessageDialog(null, mensagem.toString());
     }
+
 }

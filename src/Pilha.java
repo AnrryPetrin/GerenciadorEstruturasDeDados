@@ -49,13 +49,14 @@ public class Pilha {
 
     public void exibePilha() {
         if (vazia()) {
-            JOptionPane.showMessageDialog(null,
-                    "PILHA VAZIA!");
+            JOptionPane.showMessageDialog(null, "PILHA VAZIA!");
         } else {
+            StringBuilder mensagem = new StringBuilder();
+            mensagem.append("VALORES NA PILHA\n");
             for (int i = topo; i >= 0; i--) {
-                JOptionPane.showMessageDialog(null, "Elemento "
-                        + vetor[i] + " - posição " + i);
+                mensagem.append("Posição: ").append(i).append(" Valor: ").append(vetor[i]).append("\n");
             }
+            JOptionPane.showMessageDialog(null, mensagem.toString());
         }
     }
 }

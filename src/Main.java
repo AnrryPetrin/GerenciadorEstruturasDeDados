@@ -6,15 +6,12 @@ public class Main {
         int valor;
         do {
             valor = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor inteiro (0 para sair)"));
+
             if (valor > 0) {
-                if (valor % 2 == 0) {
-                    fila.enfileirar(valor);
-                } else {
-                    pilha.empilhar(valor);
-                }
-            } else {
-                lista.insereNo_inicio(new IntNoSimples(valor));
-            }
+                if (valor % 2 == 0) fila.enfileirar(valor);
+                else pilha.empilhar(valor);
+            } else if (valor < 0) lista.insereNo_fim(new IntNoSimples(valor));
+
             if (valor == 0) JOptionPane.showMessageDialog(null, "Saindo...");
         } while (valor != 0);
         fila.exibeFila();
@@ -31,23 +28,17 @@ public class Main {
                     0 - Voltar"""));
 
             switch (opcao) {
-                case 1:
+                case 1 -> {
                     int elemento = Integer.parseInt(JOptionPane.showInputDialog("Digite o elemento a ser inserido na fila:"));
                     fila.enfileirar(elemento);
                     JOptionPane.showMessageDialog(null, "Elemento inserido na fila!");
-                    break;
-                case 2:
-                    if (fila.vazia()) {
-                        JOptionPane.showMessageDialog(null, "A fila está vazia!");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Elemento removido da fila: " + fila.desenfileirar());
-                    }
-                    break;
-                case 0:
-                    JOptionPane.showMessageDialog(null, "Voltando...");
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Opção inválida!");
+                }
+                case 2 -> {
+                    if (fila.vazia()) JOptionPane.showMessageDialog(null, "A fila está vazia!");
+                    else JOptionPane.showMessageDialog(null, "Elemento removido da fila: " + fila.desenfileirar());
+                }
+                case 0 -> JOptionPane.showMessageDialog(null, "Voltando...");
+                default -> JOptionPane.showMessageDialog(null, "Opção inválida!");
             }
         } while (opcao != 0);
     }
@@ -61,22 +52,16 @@ public class Main {
                     0 - Voltar"""));
 
             switch (opcao) {
-                case 1:
+                case 1 -> {
                     int elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "Escolha o valor a ser inserido: "));
                     pilha.empilhar(elemento);
-                    break;
-                case 2:
-                    if (pilha.vazia()) {
-                        JOptionPane.showMessageDialog(null, "A pilha está vazia!");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Elemento removido da pilha: " + pilha.desempilhar());
-                    }
-                    break;
-                case 0:
-                    JOptionPane.showMessageDialog(null, "Voltando...");
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Opção inválida!");
+                }
+                case 2 -> {
+                    if (pilha.vazia()) JOptionPane.showMessageDialog(null, "A pilha está vazia!");
+                    else JOptionPane.showMessageDialog(null, "Elemento removido da pilha: " + pilha.desempilhar());
+                }
+                case 0 -> JOptionPane.showMessageDialog(null, "Voltando...");
+                default -> JOptionPane.showMessageDialog(null, "Opção inválida!");
             }
         } while (opcao != 0);
     }
@@ -164,7 +149,6 @@ public class Main {
                             tempNo = tempNo.prox; // Avança para o próximo elemento
                         }
                         float media = (float) soma / lista.numero_nos; // Cálculo da média
-                        JOptionPane.showMessageDialog(null, "Media dos elementos da lista: " + media);
                         // Cálculo da moda
                         IntNoSimples tempNo2 = lista.primeiro; // Outra variável para percorrer a lista
                         int moda = 0; // Variável para armazenar a moda
@@ -190,6 +174,7 @@ public class Main {
                                 + "Moda: " + moda + "\n"
                                 + "Frequência da moda: " + modaFrequencia);
                     }
+                    break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Voltando...");
                     break;

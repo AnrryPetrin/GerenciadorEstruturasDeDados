@@ -50,8 +50,13 @@ public class Fila {
             elem = "Fila vazia";
         return elem;
     }
-    public void exibeFila(){
-        for (int i = 0; i < total; i++)
-            JOptionPane.showMessageDialog(null, "posicao " + i + " valor " + vetor[i]);
+    public void exibeFila() {
+        StringBuilder mensagem = new StringBuilder();
+        mensagem.append("VALORES NA FILA\n");
+        for (int i = 0; i < total; i++) {
+            mensagem.append("Posição: ").append(i).append(" Valor: ").append(vetor[i]).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, mensagem.toString());
     }
+
 }
